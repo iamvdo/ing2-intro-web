@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>{{TITLE}}</title>
+    <title>«Le» Web - ING2 2017</title>
 
     <meta name="description" content="{{DESCRIPTION}}">
 
@@ -27,43 +27,523 @@
       <div class="slides">
 
         <section>
-          <h1>{{TITLE}}</h1>
-          <h2>{{SUBTITLE}}</h2>
+          <h1>«Le» Web 💻</h1>
+          <h2>ING2 2017</h2>
           <p class="u-aligncenter u-small u-margin">
             Vincent De Oliveira &middot; <a href="http://twitter.com/iamvdo">@iamvdo</a>
           </p>
         </section>
 
-        <section class="me">
-          <h2>Hello, c'est <a href="http://twitter.com/iamvdo">@iamvdo</a></h2>
-          <ul class="vcard">
-            <li>Vincent De Oliveira</li>
-            <li>Formateur web <a href="http://www.ensg.eu" title="Ecole Nationale des Sciences Géographiques">ENSG Géomatique</a></li>
-            <li>Je fais du CSS
+        <section class="Jumbo">
+          <p class="Jumbo-title">Rappels</p>
+          <p class="u-aligncenter u-emoji">😎</p>
+        </section>
+
+        <section>
+          <h2>Les débuts du WWW</h2>
+          <ul>
+            <li>1989</li>
+            <li>Créé par Tim Berners-Lee</li>
+            <li>Système hypertexte distribué</li>
+            <li><a href="http://info.cern.ch/hypertext/WWW/TheProject.html">Première page web</a></li>
+            <li>Internet existe depuis les années 60 !</li>
+            <img class="fragment current-visible overlay" src="/images/premier-site-web.jpg" />
+          </ul>
+        </section>
+
+        <section>
+          <h2>Le WWW en 1989</h2>
+          <ul>
+            <li>Basé sur Internet (TCP/IP, DNS)</li>
+            <li>Plus:
               <ul>
-                <li><a href="http://css3create.com">CSS3Create</a>, <a href="http://iamvdo.me">iamvdo</a>, <a href="http://pleeease.io">Pleeease</a></li>
-                <li>Livre <a href="http://livre-css3.fr">CSS3 Le design web moderne</a></li>
+                <li>URLs</li>
+                <li>Protocole HTTP</li>
+                <li>Langage HTML</li>
               </ul>
             </li>
           </ul>
         </section>
 
+        <section>
+          <h2>Le WWW, ~30 ans après</h2>
+          <ul>
+            <li>Basé sur Internet (TCP/IP, DNS)</li>
+            <li>Plus:
+              <ul>
+                <li>URLs</li>
+                <li>Protocole HTTP</li>
+                <li>Langage HTML</li>
+              </ul>
+            </li>
+            <li class="fragment">Et quelques fioritures:
+              <ul>
+                <li>Images (1993)</li>
+                <li>JavaScript (1995)</li>
+                <li>CSS (1996)</li>
+                <li>DOM (1998)</li>
+                <li>etc.</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section class="Showcase">
+          <h1>What‽</h1>
+          <h1 class="u-emoji">😲</h1>
+          <div class="Conseil fragment">Intéropérabilité FTW !</div>
+        </section>
+
+        <section>
+          <h1>DNS</h1>
+          <iframe src="https://howdns.works" width="1000" height="400"></iframe>
+          <p class="Conseil fragment">Traduit un nom de domaine en adresse IP</p>
+        </section>
+
+        <section>
+            <h2>URLs</h2>
+            <ul>
+                <li>Uniform Resource Locator</li>
+                <li>Ce sont les ressources du WWW</li>
+                <li>Identifie précisément une ressource (page, images, torrent, etc.)</li>
+                <li>Un sous-ensemble d'URI (Uniform Resource Identifier)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>URLs</h2>
+            <p><img src="/images/url.jpg" /></p>
+            <ul>
+                <li class="fragment"><code>http://</code> Protocole HTTP</li>
+                <li class="fragment"><code>www</code> Sous-domaine</li>
+                <li class="fragment"> <code>exemple.com</code> Nom de domaine (+extension)</li>
+                <li class="fragment"> <code>:80</code> Port (défaut: 80, 443)</li>
+                <li class="fragment"> <code>chemin/page.html</code> Chemin de la ressource</li>
+                <li class="fragment"> <code>?id=8&name=nom</code> Paramètres de la requête (query string)</li>
+                <li class="fragment"> <code>#ancre</code> Fragment</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Protocole HTTP</h2>
+            <ul>
+                <li>HyperText Transfer Protocol</li>
+                <li>Protocole de communication client-serveur</li>
+                <li>Repose sur le protocole TCP/IP</li>
+                <li>Plusieurs méthodes:
+                    <ul>
+                        <li>GET: demande une ressource</li>
+                        <li>POST: envoi des données</li>
+                        <li>Et d'autres: PUT, DELETE, HEAD, etc.</li>
+                    </ul>
+                </li>
+                <li>Variante sécurisée HTTPS</li>
+            </ul>
+            <img class="fragment current-visible overlay" src="/images/pile-protocole.jpg" />
+        </section>
+
+        <section>
+            <h2>Métadonnées en entêtes HTTP</h2>
+            <div>
+              <p>Requête HTTP:</p><pre><code>GET /page.html HTTP/1.0
+Host: example.com</code></pre>
+            </div>
+            <div class="fragment">
+              <p>Réponse HTTP:</p><pre><code>HTTP/1.0 200 OK
+Date: Sat, 11 Oct 2014 13:18:48 GMT
+Server: Apache/2.2.26 (Unix)
+Content-Type: text/html
+Content-Length: 14
+
+&lt;p>Content&lt;/p></code></pre><img class="fragment current-visible overlay" src="/images/entete-http.jpg" />
+            </div>
+        </section>
+
+        <section>
+          <h2>Architecture classique client / serveur</h2>
+          <ul>
+            <li>Le client fait des requêtes synchrones au serveur</li>
+            <li>Le serveur web:
+              <ul>
+                <li>récupère les données stockées (ressources, BDD)</li>
+                <li>traite les données</li>
+                <li>répond au client</li>
+              </ul>
+            </li>
+            <li>Le client affiche les données</li><img class="fragment current-visible overlay" src="/images/archi1.jpg" /></ul>
+        </section>
+
+        <section class="Part">
+          <h1>Client</h1>
+          <p class="u-aligncenter">(Navigateur)</p>
+        </section>
+
+        <section>
+          <h2>HTML</h2>
+          <ul>
+            <li>HyperText Markup Language</li>
+            <li>Langage à balises de données hypertextes</li>
+            <li>Définit:
+              <ul>
+                <li>le contenu de la page (textes, images, vidéos, etc)</li>
+                <li>la sémantique de ces éléments</li>
+                <li>la structure</li>
+                <li>les liens entre les ressources</li>
+              </ul>
+            </li>
+            <li>Doit permettre l'accessibilité des données</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>CSS</h2>
+          <ul>
+            <li>Cascading Style Sheets</li>
+            <li>Feuilles de styles en cascade</li>
+            <li>Définit:
+              <ul>
+                <li>le rendu visuel des documents XML</li>
+                <li>un peu d'interactivité visuelle</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>JavaScript</h2>
+          <ul>
+            <li>Langage de programmation de script</li>
+            <li>A ne pas confondre avec JAVA</li>
+            <li>Utilisé pour
+              <ul>
+                <li>interactivité des pages</li>
+                <li>interagir avec le DOM</li>
+                <li>logique applicative</li>
+              </ul>
+            </li>
+          </ul>
+          <p class="Conseil fragment">LE seul langage coté client !</p>
+        </section>
+
+        <section>
+          <h2>3 langages = 3 pôles</h2>
+          <p>Séparation des tâches</p>
+          <ul>
+            <li>Contenu</li>
+            <li>Mise en forme</li>
+            <li>Intéractivité</li>
+          </ul>
+        </section>
+
         <section class="Jumbo">
-          <p class="Jumbo-title">{{TITLE}}</p>
-          <div class="fragment">
-            <p class="Jumbo-text">{{TEXT}}</p>
-            <p class="Jumbo-text">{{TEXT}}</p>
-          </div>
+          <p class="Jumbo-title">Toutes les ressources doivent être coté client</p>
+          <p class="Conseil fragment">On télécharge donc (illégalement) TOUT LE TEMPS </p>
+        </section>
+
+        <section class="Part">
+          <h1>Serveur</h1>
+        </section>
+
+        <section>
+          <h2>Serveurs</h2>
+          <ul>
+            <li>Serveur Web: Apache, nginx, Python, Node.js, etc.</li>
+            <li>Serveur Carto: GeoServer, MapServer, etc.</li>
+          </ul>
+          <ul>
+            <li>Langages: PHP, JAVA, .Net, Python, JavaScript (Node.js)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Spécificités du web</h2>
+          <ul>
+            <li>Environnement non contrôlé
+              <ul>
+                <li>Clients web multiples</li>
+                <li>Tailles d'écrans, résolutions (Desktop, mobile)</li>
+                <li>Connexions (Filaire, WIFI, 4G, Edge)</li>
+                <li>Performances inégales</li>
+              </ul>
+            </li>
+            <li>Accessibilité des données</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Accessibilité</h2>
+          <ul>
+            <li>Problématique de l'accès aux services et contenus en ligne</li>
+            <li>Média web permet cela (contrairement au papier par ex.)</li>
+          </ul>
+          <p>Pour qui?</p>
+          <ul>
+            <li>Handicap</li>
+            <li>Sénior</li>
+            <li>Tout le monde peut être en situation de handicap</li>
+          </ul>
+        </section>
+
+        <section class="Showcase">
+          <h2>Amélioration progressive</h2>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Copenhagen_Metro_escalators.jpg" alt="Escalators dans le métro de Copenhague">
+          <p class="Conseil fragment">Les escalators sont des escaliers améliorés.<br><small>Et quand ils ne fonctionnent plus, ce sont de simples escaliers</small></p>
+        </section>
+
+        <section class="Jumbo">
+          <p class="Jumbo-title">Hands-on!</p>
+          <p class="u-emoji u-aligncenter">👐</p>
+        </section>
+
+        <section>
+          <h2>Aucune différence de techno</h2>
+          <ul>
+            <li>Blog / Site web vitrine</li>
+            <li>Site e-commerce</li>
+            <li>Site applicatif</li>
+            <li>Mais également:
+              <ul>
+                <li>Certaines applications mobiles</li>
+                <li>Certaines applications natives</li>
+              </ul>
+            </li>
+            <li>Rien a changé techniquement, et pourtant on est loin des débuts!</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Le blog de Mamie Caillou</h2>
+          <a href="http://www.mamiecaillou.com/"><img src="/images/mamie-caillou.jpg" alt=""></a>
+        </section>
+
+        <section>
+          <h2>Facebook</h2>
+          <a href="http://facebook.com"><img src="/images/facebook.jpg"/></a>
+        </section>
+
+        <section>
+          <h2>Google Maps</h2>
+          <a href="http://maps.google.fr"><img src="/images/google-maps.jpg"/></a>
+        </section>
+
+        <section>
+          <h2>Google Docs</h2>
+          <a href="http://docs.google.fr"><img src="/images/google-docs.jpg"/></a>
+        </section>
+
+        <section>
+          <h2>Webmail (gmail)</h2>
+          <a href="http://gmail.com"><img src="/images/gmail.jpg"/></a>
+        </section>
+
+        <section>
+          <h2>GitHub</h2>
+          <a href="http://github.com"><img src="/images/github.jpg"/></a>
+        </section>
+
+        <section class="Part">
+          <h1>Architectures</h1>
+          <p class="u-aligncenter u-emoji">🏢</p>
+        </section>
+
+        <section>
+          <h2>Architectures</h2>
+          <ul>
+            <li>Sites techniquement identiques (client)</li>
+            <li>Acquisition / Traitement / Stockage des données différents</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Architecture moderne</h2>
+          <ul>
+            <li>AJAX (Asynchronous JavaScript And XML)</li>
+            <li>Le client:
+              <ul>
+                <li>fait des requêtes asynchrones au serveur</li>
+                <li>récupère et traite ces informations</li>
+                <li>modifie la page avec le résultat</li>
+              </ul>
+            </li>
+            <li>→ Le socle des applications riches (RIA)</li><img class="fragment current-visible overlay" src="/images/archi2.jpg" /></ul>
+        </section>
+
+        <section>
+          <h2>Application riche</h2>
+          <ul>
+            <li>En plus, le client:
+              <ul>
+                <li>traite les données</li>
+                <li>stocke les données</li>
+                <li>affiche / modifie le résultat</li>
+                <li>communique avec d'autres clients (P2P)</li>
+                <li>accède au système</li>
+                <li>etc</li>
+              </ul>
+            </li>
+            <li>Le serveur:
+              <ul>
+                <li>peut pusher des infos au client (temps-réel)</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section class="Showcase">
+          <h2>Welcome HTML5!</h2>
+          <img class="Image--unstyled" src="/images/html5.png" />
+        </section>
+
+        <section>
+          <h2>HTML5, petite histoire</h2>
+          <ul>
+            <li>1999: <a href="http://www.w3.org/TR/1999/REC-html401-19991224/">HTML4</a> par le W3C</li>
+            <li>2000-2007: W3C travaille sur XHTML
+              <ul>
+                <li>reformulation de HTML4 en XML</li>
+              </ul>
+            </li>
+            <li>2004: Création du <a href="http://www.whatwg.org/">WHATWG</a>
+              <ul>
+                <li>travaille sur un nouveau standard: HTML5</li>
+              </ul>
+            </li>
+            <li>2007: W3C adopte HTML5 sous l'impulsion du WHATWG</li>
+            <li>Depuis:
+              <ul>
+                <li>W3C abandonne XHTML2</li>
+                <li>HTML5 s'est imposé</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>HTML5</h2>
+          <ul>
+            <li>Buzzword!</li>
+            <li>HTML5 = <span>HTML </span><span>+ API JavaScript </span><span>+ CSS3</span></li>
+            <li>HTML5: <a href="http://www.w3.org/TR/html5/single-page.html">une bonne grosse doc'</a></li>
+            <li> <a href="http://www.w3.org/html/logo/#the-technology-top">Présentation de HTML5 par W3C</a></li>
+            <li>Permet la création d'application riches!</li>
+          </ul>
+          <p class="Conseil fragment">
+            Remplaçant de tout ce qui a été créé pour pallier les manques: Flash, JavaEE, Flex, etc.
+          </p>
+        </section>
+
+        <section>
+          <h2>Mobile</h2>
+          <ul>
+            <li>Tout pareil !</li>
+            <li>Application packagée (PhoneGap/Cordova)</li>
+            <li>Application native (compilée depuis web)</li>
+            <li>Le site est déjà l'application: PWA 👍</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Progressive Web App</h2>
+          <ul>
+            <li>Pas de «téléchargement»</li>
+          </ul>
+          <ul>
+            <li>Grâce aux Service Workers + Web App Manifest</li>
+            <li>Progressive enhancement</li>
+            <li>Responsive</li>
+            <li>Offline. !!!OFFLINE!!!</li>
+            <li>App-like</li>
+            <li>Toujours à jour</li>
+            <li>"Découvrable" (comme sur un store)</li>
+          </ul>
+        </section>
+
+        <section class="Jumbo">
+          <p class="Jumbo-title">PWA = 😍</p>
+        </section>
+
+        <section>
+          <h2>Environnement client</h2>
+          <ul>
+            <li class="fragment"><strong>Graphique</strong>
+              <ul>
+                <li>Canvas (WebGL), SVG, CSS, RWD, etc.</li>
+              </ul>
+            </li>
+            <li class="fragment"><strong>Contenu</strong>
+              <ul>
+                <li>Elements d'UI, Offline, History, etc.</li>
+              </ul>
+            </li>
+            <li class="fragment"><strong>Données</strong>
+              <ul>
+                <li>IndexedDB, WebStorage, WebSockets, WebRTC, etc.</li>
+              </ul>
+            </li>
+            <li class="fragment"><strong>Système</strong>
+              <ul>
+                <li>Geolocalisation, FileAPI, Battery, Bluetooth, etc.</li>
+              </ul>
+            </li>
+            <li class="fragment"><strong>IOT</strong>
+              <ul>
+                <li>Web Physique, Web VR/AR, etc.</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Démos: Graphique</h2>
+            <p><a href="http://iamthecu.be/">iamthecube</a></p>
+            <p><a href="http://mediaqueri.es">Media-queries (Responsive Web Design)</a></p>
+            <p><a href="http://html5demos.com/svg-clock">Horloge SVG</a></p>
+            <p><a href="http://snapsvg.io/demos/#coffee">Coffee Maker</a></p>
+            <p><a href="http://www.craftymind.com/factory/html5video/CanvasVideo.html">Canvas Vidéo</a></p>
+            <p><a href="http://www.playmapscube.com/">Maps Cube</a></p>
+            <p><a href="http://celian-garcia.github.io/rando3D/demo/v1.3/">Randonnée 3D</a></p>
+        </section>
+
+        <section>
+          <h2>Démos: Système</h2>
+          <p><a href="http://html5demos.com/geo">Geolocalisation</a></p>
+          <p><a href="http://orb.enclavegames.com/">Device Orientation (2D maze)</a> => orb.enclavegames.com</p>
+          <p><a href="http://html5demos.com/file-api">Manipulation de fichiers</a></p>
+        </section>
+
+        <section>
+          <h2>Démos: Données</h2>
+          <p><a href="http://scripting.com/misc/localStorageDemo.html">Local storage</a></p>
+          <p><a href="http://jsbin.com/qiseyup/edit?js,console">IndexedDB demo</a></p>
+        </section>
+
+        <section>
+          <h2>Démos: Websocket</h2>
+          <p><a href="http://vast-escarpment-3798.herokuapp.com/">Image Geolocation</a> => goo.gl/JXXMR9</p>
+          <p><a href="https://protected-hollows-7891.herokuapp.com/">Flappy Bird temps-réel multijoueur</a> => https://goo.gl/n22xll</p>
+          <p><a href="https://opentokrtc.com">Peer to peer temps-réel (WebRTC)</a></p>
+        </section>
+
+        <section>
+          <h2>Démos: PWA</h2>
+          <p><a href="https://chris.bolin.co/offline/">Offline</a></p>
+          <p><a href="https://pwa.rocks/">PWA rocks</a></p>
+          <p><a href="https://iamvdo.github.com/speedometer-pwa">Speedometer</a></p>
+        </section>
+
+        <section>
+          <h2>Démos: WebVR</h2>
+          <p><a href="https://aframe.io/examples/showcase/helloworld/">A-frame</a></p>
+          <p><a href="https://mozvr.com/">MozVR</a></p>
+          <p><a href="http://m.spacelamb.12wave.com">SpaceLamb (WebVR game)</a> => m.spacelamb.12wave.com</p>
+        </section>
+
+        <section>
+          <h2>Démos: IOT</h2>
+          <p><a href="https://webdr.one">Piloter un drone</a></p>
         </section>
 
       </div>
-    </div>
-
-    <div class="info-overlay" id="info-twitter">
-      <a href="https://twitter.com/iamvdo">@iamvdo</a>
-    </div>
-    <div class="info-overlay" id="info-slides">
-      <a href="{{LINK}}">{{LINK}}</a>
     </div>
 
     <script src="lib/js/head.min.js"></script>
